@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharp Typing Tutor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1 class="app-title">Sharp Typing Tutor</h1>
+        <div class="user-stats">
+            <span class="stat-item">WPM: <span id="current-wpm">0</span></span>
+            <span class="stat-item">Accuracy: <span id="current-accuracy">100</span>%</span>
+            <span class="stat-item">Level: <span id="current-level">Beginner</span></span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Lesson Selector Panel -->
+        <aside class="lesson-panel">
+            <div class="level-selector">
+                <h2>Choose Your Level</h2>
+                <div class="level-buttons">
+                    <button class="level-btn active" data-level="beginner">Beginner</button>
+                    <button class="level-btn" data-level="intermediate">Intermediate</button>
+                    <button class="level-btn" data-level="advanced">Advanced</button>
+                    <button class="level-btn" data-level="master">Master</button>
+                </div>
+            </div>
+
+            <div class="lesson-selector">
+                <h3>Lessons</h3>
+                <div class="lesson-list" id="lesson-list">
+                    <!-- Lessons will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <h3>Your Progress</h3>
+                <div class="badges-container" id="badges-container">
+                    <!-- Badges will be populated by JavaScript -->
+                </div>
+                <div class="weak-keys">
+                    <h4>Keys to Practice</h4>
+                    <div class="weak-keys-list" id="weak-keys-list">
+                        <!-- Weak keys will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Typing Area -->
+        <section class="typing-section">
+            <!-- Metrics Display -->
+            <div class="metrics-bar">
+                <div class="metric">
+                    <span class="metric-label">WPM</span>
+                    <span class="metric-value" id="wpm-display">0</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Accuracy</span>
+                    <span class="metric-value" id="accuracy-display">100%</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Time</span>
+                    <span class="metric-value" id="time-display">0:00</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Errors</span>
+                    <span class="metric-value" id="errors-display">0</span>
+                </div>
+            </div>
+
+            <!-- Text Display Area -->
+            <div class="text-display" id="text-display">
+                <div class="text-content" id="text-content">
+                    Click "Start Lesson" to begin typing practice
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <textarea 
+                    id="typing-input" 
+                    class="typing-input" 
+                    placeholder="Start typing here..."
+                    disabled
+                ></textarea>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="controls">
+                <button class="btn btn-primary" id="start-btn">Start Lesson</button>
+                <button class="btn btn-secondary" id="reset-btn">Reset</button>
+                <button class="btn btn-secondary" id="next-btn" style="display: none;">Next Lesson</button>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="results-panel" id="results-panel" style="display: none;">
+                <h3>Lesson Complete!</h3>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-label">Final WPM:</span>
+                        <span class="result-value" id="final-wpm">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Accuracy:</span>
+                        <span class="result-value" id="final-accuracy">0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Time Taken:</span>
+                        <span class="result-value" id="final-time">0:00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Errors:</span>
+                        <span class="result-value" id="final-errors">0</span>
+                    </div>
+                </div>
+                <div class="performance-message" id="performance-message">
+                    <!-- Performance feedback will be inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Feedback Overlays -->
+    <div class="feedback-overlay" id="feedback-overlay">
+        <div class="feedback-content" id="feedback-content">
+            <!-- Dynamic feedback messages -->
+        </div>
+    </div>
+
+    <!-- Badge Notification -->
+    <div class="badge-notification" id="badge-notification">
+        <div class="badge-content">
+            <div class="badge-icon">🏆</div>
+            <div class="badge-text" id="badge-text">Badge Earned!</div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+
